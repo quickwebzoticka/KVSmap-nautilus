@@ -476,7 +476,7 @@ $(function() {
               typea: 'pool',
             },
             {
-                position: { lat: 59.853936, lng: 30.135905 },
+                position: { lat: 59.854908, lng: 30.151604 },
                 type: 'logo',
                 title: 'Жилой комплекс Наутилус',
                 typea: 'logo',
@@ -568,7 +568,7 @@ $(function() {
     function initMap () {
         
         map = new google.maps.Map(document.querySelector('#map'), {
-            center: new google.maps.LatLng(59.853936, 30.135905),
+            center: new google.maps.LatLng(59.854908, 30.151604),
             zoom: 14,
             streetViewControl: false,
             mapTypeControl: false,
@@ -936,8 +936,66 @@ $(function() {
     }
 
     filterMarkers = function (category) {
-      map.panTo(new google.maps.LatLng(59.853936, 30.135905));
-      map.setZoom(14);
+      if (category === "gym") {
+          map.panTo(new google.maps.LatLng(59.847294, 30.175074));
+          map.setZoom(14);
+        }
+      if (category === "bycicle") {
+          map.panTo(new google.maps.LatLng(59.850263, 30.148342));
+          map.setZoom(15);
+        }
+      if (category === "workout") {
+          map.panTo(new google.maps.LatLng(59.850263, 30.148342));
+          map.setZoom(14);
+        }
+      if (category === "mount") {
+          map.panTo(new google.maps.LatLng(60.063399, 30.325092));
+          map.setZoom(14);
+        }
+      if (category === "fun") {
+          map.panTo(new google.maps.LatLng(59.846241, 30.149876));
+          map.setZoom(13);
+        }
+      if (category === "horse") {
+          map.panTo(new google.maps.LatLng(59.856424, 30.003061));
+          map.setZoom(12);
+        }
+      if (category === "spa") {
+          map.panTo(new google.maps.LatLng(59.850263, 30.148342));
+          map.setZoom(14);
+        }
+      if (category === "healthfood") {
+          map.panTo(new google.maps.LatLng(59.846148, 30.146286));
+          map.setZoom(14);
+        }
+      if (category === "park") {
+          map.panTo(new google.maps.LatLng(59.837474, 30.163653));
+          map.setZoom(14);
+        }
+      if (category === "ski") {
+          map.panTo(new google.maps.LatLng(59.850263, 30.148342));
+          map.setZoom(15);
+        }
+      if (category === "beach") {
+          map.panTo(new google.maps.LatLng(59.859873, 30.139827));
+          map.setZoom(15);
+        }
+      if (category === "snowboard") {
+          map.panTo(new google.maps.LatLng(59.850263, 30.148342));
+          map.setZoom(14);
+        }
+      if (category === "pool") {
+          map.panTo(new google.maps.LatLng(59.853431, 30.131423));
+          map.setZoom(14);
+        }
+      if (category === "sail") {
+          map.panTo(new google.maps.LatLng(59.853431, 30.131423));
+          map.setZoom(14);
+        }
+
+      if (category === "") {
+            map.setZoom(14);
+      }
         gmarkers1.map((marker) => {
             if (marker.category == category || category.length === 0 || marker.category == "logo") {
                 marker.setVisible(true);
@@ -948,7 +1006,8 @@ $(function() {
         });
     }
     function moveToLocation(){
-        map.panTo(new google.maps.LatLng(59.853936, 30.135905));
+        map.panTo(new google.maps.LatLng(59.854908, 30.151604));
+        map.setZoom(14);
         gmarkers1.map((marker) => {
             marker.setVisible(true);
         });
